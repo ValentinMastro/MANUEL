@@ -22,8 +22,7 @@
     % #1: numéro du dernier exercice
     % #2: chemin relatif du répertoire contenant les exercices
     \foreach \n in {1, ..., #1} {
-        \num[minimum-integer-digits=3]{\n}
-        %\exercice{        }{#2}
+        \exercice{\ifnum \n < 100 0\fi\ifnum \n < 10 0\fi\n}{#2}
     }
 }
 
