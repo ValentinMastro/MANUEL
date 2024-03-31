@@ -1,0 +1,15 @@
+[doc]
+name = "MANUEL"
+bundle = "https://data1.fullyjustified.net/tlextras-2022.0r0.tar"
+
+[[output]]
+name = "manuel"
+type = "pdf"
+inputs = [
+    "_preamble.tex", 
+    "index.tex", 
+    "4eme/index.tex",
+        "4eme/Probabilités/index.tex",
+    "6eme/index.tex",
+    "_postamble.tex"
+]

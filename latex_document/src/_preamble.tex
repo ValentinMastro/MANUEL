@@ -1,0 +1,37 @@
+\documentclass[a4paper, 10pt, oneside]{book}
+\usepackage[margin=1cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{tikz}
+\usepackage{siunitx}
+
+\usepackage[french]{babel}
+\title{Manuel de mathématiques}
+\author{Valentin Mastro}
+\date{\today}
+
+\usepackage{import}
+\newcommand{\exercice}[2]{
+    % #1: numéro de l'exercice
+    % #2: chemin relatif du fichier contenant l'exercice
+    \section*{Exercice #1}
+    \addcontentsline{toc}{section}{Exercice #1}
+    \import{#2}{#1}
+}
+
+\newcommand{\importerExercices}[2]{
+    % #1: numéro du dernier exercice
+    % #2: chemin relatif du répertoire contenant les exercices
+    \foreach \n in {1, ..., #1} {
+        \num[minimum-integer-digits=3]{\n}
+        %\exercice{        }{#2}
+    }
+}
+
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\textbf{\arabic*)}}
+\setlist[enumerate,2]{label=\textbf{\alph*)}}
+\setlist[enumerate,3]{label=\textbf{\roman*)}}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
