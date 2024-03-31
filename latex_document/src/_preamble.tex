@@ -2,20 +2,50 @@
 \usepackage[margin=1cm]{geometry}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{tikz}
+\usetikzlibrary{calc, positioning, shapes, arrows.meta, math}
+\definecolor{blanc}{HTML}{ffffff}
+\definecolor{rouge}{HTML}{bb0000}
+\definecolor{vert}{HTML}{008800}
+\definecolor{bleu}{HTML}{0000ff}
+\definecolor{noir}{HTML}{000000}
+\definecolor{jaune}{HTML}{dddd00}
+\definecolor{gris}{HTML}{777777}
+\definecolor{grisclair}{HTML}{bbbbbb}
+\definecolor{rose}{HTML}{ff0080}
+\definecolor{marron}{HTML}{804000}
+
+\usepackage{eurosym}
 \usepackage{siunitx}
+\sisetup{locale = FR}
+\DeclareSIUnit{\EURO}{\text{\euro}}
 
 \usepackage[french]{babel}
 \title{Manuel de mathématiques}
 \author{Valentin Mastro}
 \date{\today}
 
+\newcommand{\trait}{
+    \begin{tikzpicture}
+        \draw[noir] (0,0) -- (\textwidth,0);
+    \end{tikzpicture}
+}
+
 \usepackage{import}
 \newcommand{\exercice}[2]{
     % #1: numéro de l'exercice
     % #2: chemin relatif du fichier contenant l'exercice
-    \section*{Exercice #1}
-    \addcontentsline{toc}{section}{Exercice #1}
-    \import{#2}{#1}
+    \par\noindent\vspace{5pt}%
+    \begin{minipage}{\textwidth}
+        \trait{}%
+        \vspace{-32pt}%
+        \section*{Exercice \num{#1}}%
+        \vspace{-19pt}%
+        \trait{}%
+
+        \addcontentsline{toc}{section}{Exercice \num{#1}}%
+        \import{#2}{#1}
+    \end{minipage}
+    \vspace{5pt}%
 }
 
 \newcommand{\importerExercices}[2]{
@@ -26,11 +56,35 @@
     }
 }
 
+\newcommand{\chapitre}[1]{
+    % #1: titre du chapitre
+    \stepcounter{chapter}%
+    \addcontentsline{toc}{chapter}{Chapitre \thechapter{} - #1}%
+    \par\noindent\rule{\textwidth}{4pt}%
+    \vspace{-5pt}%
+    \par\noindent\rule{\textwidth}{1pt}%
+    \begin{center}
+        \textbf{\Huge Chapitre \thechapter{}}
+    \end{center}
+    \vspace{-6pt}%
+    \par\noindent\rule{\textwidth}{1pt}%
+    \begin{center}
+        \textbf{\Huge #1}
+    \end{center}
+}
+
+\usepackage[Conny]{fncychap}
+
 \usepackage{enumitem}
 \setlist[enumerate,1]{label=\textbf{\arabic*)}}
 \setlist[enumerate,2]{label=\textbf{\alph*)}}
 \setlist[enumerate,3]{label=\textbf{\roman*)}}
 
+\usepackage{multicol}
+
+\usepackage{tabularx}
+
 \setlength{\parindent}{0pt}
+\setcounter{tocdepth}{0}
 
 \begin{document}
