@@ -1,0 +1,14 @@
+\begin{center}
+    \begin{tikzpicture}
+        \tikzmath{ \r=1.4; }
+        \draw (0,0) circle (\r);
+        \draw ({\r*cos(30)},{\r*sin(30)}) -- ({\r*cos(210)},{\r*sin(210)});
+        \draw ({\r*cos(330)},{\r*sin(330)}) -- ({\r*cos(150)},{\r*sin(150)});
+        \draw (0,\r) -- (0,-\r);
+    \end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+    \item Colorier la roue ci-dessus pour qu'elle soit constituée de deux issues de même probabilité.
+    \item Colorier la roue ci-dessus pour que toutes ses issues aient une probabilité de $\frac{1}{3}$.
+\end{enumerate}

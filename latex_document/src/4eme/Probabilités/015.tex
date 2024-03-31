@@ -1,0 +1,14 @@
+Dans un lac artificiel carré, on a construit une île carrée, comme représentée dans la figure ci-dessous. Un canard se pose au hasard sur le lac.
+
+\begin{center}
+    \begin{tikzpicture}
+        \filldraw[bleu!30!cyan] (0,0) rectangle (6,6);
+        \draw[noir!20!blanc] (0,0) grid (6,6);
+        \filldraw[rouge,rotate around={45:(4,3)}] (4,3) rectangle +(1.414,1.414) node[midway,blanc]{\bfseries\Large île};
+    \end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+    \item Calculer la probabilité que la canard se pose sur l'île.
+    \item Exprimer cette probabilité sous forme de fraction simplifiée.
+\end{enumerate}

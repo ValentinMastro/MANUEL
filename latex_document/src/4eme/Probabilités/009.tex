@@ -1,0 +1,32 @@
+À un stand de fête foraine, on gagne un lot si on tire le chiffre 1. La joueur a le choix entre : lancer un dé dont le patron est ci-dessous à gauche, ou jouer à la roulette à droite.
+
+\begin{center}
+    \begin{tikzpicture}
+        \filldraw[vert!70!white] (0,0) rectangle (1,1) node[midway,white]{1};
+        \filldraw[vert!70!white] (1,1) rectangle (2,2) node[midway,white]{1};
+        \filldraw[vert!70!white] (1,-1) rectangle (2,0) node[midway,white]{1};
+        \filldraw[vert!70!white] (3,0) rectangle (4,1) node[midway,white]{1};
+        \filldraw[bleu!40!white] (1,0) rectangle (2,1) node[midway,white]{2};
+        \filldraw[rouge!60!white] (2,0) rectangle (3,1) node[midway,white]{3};
+        \draw (0,0) rectangle (4,1);
+        \draw (1,-1) rectangle (2,2);
+        \draw (3,0) -- (3,1);
+    \end{tikzpicture} \hspace{2cm}
+    \begin{tikzpicture}
+        \tikzmath{ \r=1.6; }
+        \filldraw[vert!70!white] (0,0) -- ({\r*cos(135)},{\r*sin(135)}) arc (135:315:\r) -- cycle;
+        \filldraw[bleu!40!white] (0,0) -- ({\r*cos(135)},{\r*sin(135)}) arc (135:45:\r) -- cycle;
+        \filldraw[rouge!60!white] (0,0) -- (\r,0) arc (0:-45:\r) -- cycle;
+        \filldraw[vert!70!white] (0,0) -- (\r,0) arc (0:45:\r) -- cycle;
+        \draw (0,0) circle (\r);
+        \draw ({\r*cos(45)},{\r*cos(45)}) -- ({\r*cos(225)},{\r*sin(225)});
+        \draw ({\r*cos(-45)},{\r*sin(-45)}) -- ({\r*cos(135)},{\r*sin(135)});
+        \draw (-\r,0) -- (\r,0);
+        \draw (0,-\r) -- (0,\r);
+        \foreach[count=\i from 0] \n in {1,2,2,1,1,1,1,3} {
+            \node[white] at ({0.707*\r*cos((\i+0.5)*45)},{0.707*\r*sin((\i+0.5)*45)}) {\n};
+        }
+    \end{tikzpicture}
+\end{center}
+
+Que doit choisir le joueur pour avoir le plus de chances de gagner ?

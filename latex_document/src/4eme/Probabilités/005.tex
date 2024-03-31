@@ -1,0 +1,27 @@
+Une élève choisit un bonbon dans un sachet de bonbons colorés. Elle se demande quelle serait la probabilité d'avoir un bonbon rouge. Le nombre de bonbons par couleur est illustré par le diagramme en barres suivant :
+\begin{center}
+    \begin{tikzpicture}[xscale=1.7, yscale=0.6]
+        \draw (0,0) -- (8,0);
+        \draw[-Latex] (0,0) -- (0,7);
+        \foreach \y in {1,...,6} {
+            \draw (-0.2,\y) node[anchor=east]{\y} -- (0,\y);
+            \draw[black!30!white] (0,\y) -- (8,\y); 
+        }
+        \foreach[count=\i] \c/\y in {rouge/6,orange/5,jaune/3,vert/3,bleu/2,rose/4,violet/2,marron/5} {
+            \draw (\i,-0.2) -- (\i,0);
+            \filldraw[\c] ({\i-0.6},0) rectangle ({\i-0.4}, \y);
+            \node[below] at ({\i-0.5},0) {\c \vphantom{bljg}};
+        }
+        \node[anchor=west] at (0,7) {Nombre de bonbons};
+    \end{tikzpicture}
+\end{center}
+
+La probabilité d'avoir un bonbon rouge est :
+\begin{multicols}{4}
+    \begin{enumerate}[label=\textbf{\alph*)}]
+        \item{\qty{6}{\%}}
+        \item{\qty{20}{\%}}
+        \item{$\dfrac{1}{5}$}
+        \item{\num{0.2}}
+    \end{enumerate}
+\end{multicols}

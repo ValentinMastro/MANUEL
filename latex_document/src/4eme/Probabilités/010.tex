@@ -1,0 +1,17 @@
+On donne 12 jetons identiques, puis on les numérote comme ci-dessous et on les range dans une boîte opaque.
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.6]
+        \foreach[count=\i from 0] \n in {1,3,4,1,5,2,2,5,1,1,3,5} {
+            \filldraw[noir] ({3*mod(\i,6)},{-2.5*int(\i/6)}) circle (1);
+            \filldraw[white] ({3*mod(\i,6)},{-2.5*int(\i/6)}) node[rouge]{\LARGE\bfseries\n} circle (0.7);
+        }
+    \end{tikzpicture}
+\end{center}
+
+On tire au sort un jeton dans la boîte.
+\begin{enumerate}
+    \item Définir à l'aide d'une phrase un évènement A dont les issues seraient $\left\{ 1;2;3 \right\}$.
+    \item Définir à l'aide d'une phrase un évènement B dont les issues seraient $\left\{ 1;3;5 \right\}$.
+    \item Justin affirme qu'il a plus de chances d'obtenir un nombre pair qu'un nombre impair. A-t-il raison ?
+\end{enumerate}
