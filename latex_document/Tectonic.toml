@@ -9,7 +9,6 @@ inputs = [
     "_preamble.tex", 
     "index.tex", 
     "4eme/index.tex",
-        "4eme/Probabilités/index.tex",
     "6eme/index.tex",
     "_postamble.tex"
 ]
